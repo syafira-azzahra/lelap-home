@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="terang">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lelap Home - Perlengkapan Kamar dan Rumah</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-isi">
+      <div>
+        <h1>Lelap Home</h1>
+        <p>Oleh Syafira Az-Zahra - NIM 2440304013</p>
+      </div>
+      <nav aria-label="Menu utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#produk">Produk</a>
+        <a href="#daftar">Daftar</a>
+      </nav>
+      <button id="tombol-tema" type="button" aria-pressed="false">
+        Mode Gelap
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="beranda" class="hero">
+      <h2>Tidur nyenyak, rumah nyaman</h2>
+      <p>Perlengkapan kamar dan rumah pilihan untuk keluarga Tarakan.</p>
+    </section>
+
+    <!-- ===== STATISTIK ===== -->
+    <section id="statistik" aria-labelledby="judul-statistik">
+      <h2 id="judul-statistik">Ringkasan Produk</h2>
+      <div class="statistik-grid">
+        <div class="kartu-statistik">
+          <h3>Harga rata-rata</h3>
+          <p id="stat-rata">-</p>
+        </div>
+        <div class="kartu-statistik">
+          <h3>Produk termahal</h3>
+          <p id="stat-termahal">-</p>
+        </div>
+        <div class="kartu-statistik">
+          <h3>Jumlah kategori</h3>
+          <p id="stat-kategori">-</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRODUK + FILTER ===== -->
+    <section id="produk" aria-labelledby="judul-produk">
+      <h2 id="judul-produk">Produk</h2>
+
+      <div class="filter">
+        <label for="filter-kategori">Kategori</label>
+        <select id="filter-kategori">
+          <option value="semua">Semua kategori</option>
+        </select>
+
+        <label for="filter-harga">Harga maksimal ($)</label>
+        <input type="number" id="filter-harga" min="0" placeholder="Contoh: 100">
+      </div>
+
+      <!-- Tempat status loading / error / sukses -->
+      <p id="status" role="status" aria-live="polite"></p>
+
+      <div id="daftar-produk" class="produk-grid"></div>
+    </section>
+
+    <!-- ===== FORM ===== -->
+    <section id="daftar" aria-labelledby="judul-daftar">
+      <h2 id="judul-daftar">Daftar Pelanggan</h2>
+      <form id="form-daftar" novalidate>
+        <div>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama">
+        </div>
+
+        <fieldset>
+          <legend>Kategori favoritmu (pilih minimal satu)</legend>
+          <div id="pilihan-kategori">
+            <!-- checkbox dibuat lewat JavaScript dari data kategori -->
+          </div>
+          <p id="error-kategori" class="pesan-error" role="alert"></p>
+        </fieldset>
+
+        <button type="submit">Daftar</button>
+        <p id="pesan-sukses" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Syafira Az-Zahra - NIM 2440304013 - Kelas Pemweb OBE PTS</p>
+  </footer>
+
+</body>
+</html>
