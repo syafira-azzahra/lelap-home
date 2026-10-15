@@ -1,0 +1,41 @@
+:root,
+[data-theme="terang"] {
+  --warna-latar: #f6f1ea;
+  --warna-kartu: #ffffff;
+  --warna-teks: #2b2b3a;
+  --warna-aksen: #4a5d8f;
+  --warna-garis: #ddd5c8;
+}
+
+[data-theme="gelap"] {
+  --warna-latar: #14161f;
+  --warna-kartu: #1f2230;
+  --warna-teks: #ece8e1;
+  --warna-aksen: #9bb0e8;
+  --warna-garis: #343850;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--warna-latar);
+  color: var(--warna-teks);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.produk-grid,
+.statistik-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
