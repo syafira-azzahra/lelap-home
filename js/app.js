@@ -4,7 +4,8 @@ const tombolTema = document.getElementById("tombol-tema");
 function terapkanTema(tema) {
   document.documentElement.setAttribute("data-theme", tema);
   const gelap = tema === "gelap";
-  tombolTema.textContent = gelap ? "Mode Terang" : "Mode Gelap";
+  // Menambahkan emoji pada teks tombol
+  tombolTema.textContent = gelap ? "Mode ☀️" : "Mode 🌙";
   tombolTema.setAttribute("aria-pressed", String(gelap));
 }
 
