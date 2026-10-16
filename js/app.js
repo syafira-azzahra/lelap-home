@@ -4,8 +4,7 @@ const tombolTema = document.getElementById("tombol-tema");
 function terapkanTema(tema) {
   document.documentElement.setAttribute("data-theme", tema);
   const gelap = tema === "gelap";
-  // Menambahkan emoji pada teks tombol
-  tombolTema.textContent = gelap ? "Mode ☀️" : "Mode 🌙";
+  tombolTema.textContent = gelap ? "☀️ Mode Terang" : "🌙 Mode Gelap";
   tombolTema.setAttribute("aria-pressed", String(gelap));
 }
 
@@ -28,7 +27,6 @@ const API_URL = "https://dummyjson.com/products?limit=0";
 
 const KATEGORI_TERPILIH = ["furniture", "home-decoration", "kitchen-accessories"];
 
-// Objek pemetaan kategori ditambahkan di sini
 const LABEL_KATEGORI = {
   "furniture": "Perabot Kamar",
   "home-decoration": "Dekorasi Rumah",
@@ -76,7 +74,6 @@ function tampilkanProduk(daftar) {
     const kartu = document.createElement("article");
     kartu.className = "kartu-produk";
     
-    // Menggunakan LABEL_KATEGORI untuk tampilan teks
     const namaKategori = LABEL_KATEGORI[p.category] || p.category;
     
     kartu.innerHTML = `
@@ -94,8 +91,8 @@ function isiOpsiKategori() {
   const select = document.getElementById("filter-kategori");
   KATEGORI_TERPILIH.forEach((k) => {
     const opsi = document.createElement("option");
-    opsi.value = k; // value tetap menggunakan bahasa asli untuk logika filter
-    opsi.textContent = LABEL_KATEGORI[k] || k; // teks yang tampil di dropdown diterjemahkan
+    opsi.value = k; 
+    opsi.textContent = LABEL_KATEGORI[k] || k; 
     select.appendChild(opsi);
   });
 }
@@ -148,7 +145,6 @@ function buatCheckboxKategori() {
     const id = `pref-${k}`;
     const baris = document.createElement("div");
     
-    // Menggunakan LABEL_KATEGORI untuk label checkbox
     const namaKategori = LABEL_KATEGORI[k] || k;
     
     baris.innerHTML = `
@@ -163,13 +159,16 @@ function validasiForm(event) {
   event.preventDefault();
   
   const nama = document.getElementById("nama").value.trim();
+  const nohp = document.getElementById("nohp").value.trim(); 
   const dipilih = document.querySelectorAll('input[name="kategori"]:checked');
   
   const errNama = document.getElementById("error-nama");
+  const errNohp = document.getElementById("error-nohp"); 
   const errKategori = document.getElementById("error-kategori");
   const sukses = document.getElementById("pesan-sukses");
   
   errNama.textContent = "";
+  errNohp.textContent = "";
   errKategori.textContent = "";
   sukses.textContent = "";
   
@@ -180,15 +179,23 @@ function validasiForm(event) {
     valid = false;
   }
   
+  // Validasi Nomor HP
+  if (nohp === "") {
+    errNohp.textContent = "⚠️ Nomor WhatsApp / HP wajib diisi.";
+    valid = false;
+  } else if (!/^[0-9]+$/.test(nohp)) {
+    errNohp.textContent = "⚠️ Nomor HP hanya boleh berisi angka.";
+    valid = false;
+  }
+  
   if (dipilih.length === 0) {
     errKategori.textContent = "⚠️ Pilih minimal satu kategori favorit.";
     valid = false;
   }
   
   if (valid) {
-    // Menerjemahkan kategori yang dipilih di pesan sukses
     const daftar = Array.from(dipilih).map((c) => LABEL_KATEGORI[c.value] || c.value).join(", ");
-    sukses.textContent = `✅ Terima kasih, ${nama}! Kategori favoritmu: ${daftar}.`;
+    sukses.textContent = `✅ Terima kasih, ${nama}! Kategori favoritmu: ${daftar}. Kami akan menghubungi ${nohp}.`;
     event.target.reset();
   }
 }

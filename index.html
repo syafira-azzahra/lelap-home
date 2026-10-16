@@ -21,7 +21,7 @@
         <a href="#daftar">Daftar</a>
       </nav>
       <button id="tombol-tema" type="button" aria-pressed="false">
-        Mode 🌙 
+        🌙 Mode Gelap
       </button>
     </div>
   </header>
@@ -78,6 +78,13 @@
           <p id="error-nama" class="pesan-error" role="alert"></p>
         </div>
 
+        <!-- TAMBAHAN INPUT NOMOR HP -->
+        <div>
+          <label for="nohp">Nomor WhatsApp / HP</label>
+          <input type="tel" id="nohp" name="nohp" placeholder="Contoh: 081234567890">
+          <p id="error-nohp" class="pesan-error" role="alert"></p>
+        </div>
+
         <fieldset>
           <legend>Kategori favoritmu (pilih minimal satu)</legend>
           <div id="pilihan-kategori">
@@ -91,7 +98,6 @@
     </section>
   </main>
 
-  <!-- BAGIAN FOOTER & KONTAK DIGABUNG -->
   <footer style="text-align: center; padding: 2rem 1rem; border-top: 2px dashed var(--warna-garis); background: var(--warna-kartu); margin-top: 2rem;">
     <div id="kontak" style="margin-bottom: 2.5rem;">
       <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Hubungi Kami</h2>
