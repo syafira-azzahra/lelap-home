@@ -1,29 +1,26 @@
-/* Mengimpor font Poppins yang modern dan estetik dari Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 
-/* ===== TEMA MODERN MINIMALIS ===== */
 :root,
 [data-theme="terang"] {
   --warna-latar: #f3f6f9;
   --warna-kartu: #ffffff;
   --warna-teks: #2c3e50;
-  --warna-aksen: #1e3a8a; /* Biru navy elegan */
+  --warna-aksen: #1e3a8a;
   --warna-garis: #e2e8f0;
   --warna-teks-aksen: #ffffff;
-  --warna-sorot: #f59e0b; /* Kuning emas */
+  --warna-sorot: #f59e0b; 
 }
 
 [data-theme="gelap"] {
   --warna-latar: #0f172a;
   --warna-kartu: #1e293b;
   --warna-teks: #f8fafc;
-  --warna-aksen: #3b82f6; /* Biru terang */
+  --warna-aksen: #3b82f6; 
   --warna-garis: #334155;
   --warna-teks-aksen: #ffffff;
   --warna-sorot: #fbbf24;
 }
 
-/* ===== RESET & BASE ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,7 +35,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Menerapkan font Poppins khusus untuk semua Judul agar tidak jelek */
 h1, h2, h3, .tombol-cta, button {
   font-family: 'Poppins', sans-serif;
 }
@@ -48,7 +44,6 @@ img {
   display: block;
 }
 
-/* ===== GRID SYSTEM ===== */
 .produk-grid,
 .statistik-grid {
   display: grid;
@@ -56,7 +51,6 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
-/* ===== HEADER ===== */
 .header {
   background: var(--warna-aksen);
   color: var(--warna-teks-aksen);
@@ -96,7 +90,6 @@ nav a:hover {
   opacity: 0.7;
 }
 
-/* ===== LAYOUT UMUM ===== */
 main {
   max-width: 1100px;
   margin: 0 auto;
@@ -111,7 +104,6 @@ h2 {
   margin-bottom: 1.25rem;
 }
 
-/* ===== HERO ===== */
 .hero {
   text-align: center;
   padding: 4rem 1.5rem;
@@ -149,7 +141,6 @@ h2 {
   box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
 }
 
-/* ===== STATISTIK ===== */
 .kartu-statistik {
   background: var(--warna-kartu);
   border: 1px solid var(--warna-garis);
@@ -171,7 +162,6 @@ h2 {
   color: var(--warna-aksen);
 }
 
-/* ===== FILTER ===== */
 .filter {
   display: flex;
   flex-wrap: wrap;
@@ -201,7 +191,6 @@ input:focus, select:focus {
   border-color: var(--warna-aksen);
 }
 
-/* ===== KARTU PRODUK ===== */
 .kartu-produk {
   background: var(--warna-kartu);
   border: 1px solid var(--warna-garis);
@@ -252,7 +241,6 @@ input:focus, select:focus {
   opacity: 0.7;
 }
 
-/* ===== FORM & DAFTAR ===== */
 #daftar {
   max-width: 700px;
   margin: 0 auto;
@@ -325,7 +313,6 @@ button[type="submit"]:hover, #tombol-tema:hover {
   color: var(--warna-aksen);
 }
 
-/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 2.5rem 1rem;
@@ -333,7 +320,6 @@ footer {
   background: var(--warna-kartu);
 }
 
-/* ===== MEDIA QUERY ===== */
 @media (max-width: 768px) {
   .hero h2 { font-size: 2rem; }
   .produk-grid, .statistik-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
